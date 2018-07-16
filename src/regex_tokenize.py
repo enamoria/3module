@@ -68,6 +68,7 @@ def tokenize(text):
     tokens = re.findall(patterns, text, re.UNICODE)
     return u" ".join(["%s" % token[0] for token in tokens])
 
+
 if __name__ == "__main__":
     xxx = "Mr.PhanHuyKinh 30-04-1975@gmail.com  dmm"
     print(tokenize(xxx))

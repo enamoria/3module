@@ -1,12 +1,15 @@
 """
     This script specify some feature function for CRF
 """
+from __future__ import print_function
 
 import sys
 import os
+import time
 
-sys.path.append(os.path.dirname(__file__))
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
+from vidic.vidic import Dictionary
 from CONSTANT import punctuations_and_symbols
 
 
@@ -30,14 +33,24 @@ def isDate(s):
 
 def isNp(s):
     # TODO Need a dicktionary here
-    if s.split("_") > 1 and s.istitle():
+    if s.split("_") > 1 and s.istitle():  # Word with more than 2 syllables and istitle are highly probable to be a Np
         return True
     return False
 
     # raise NotImplementedError
 
 
-# EDITED IN 13 Jul 2018: Add dictionary
+# ADDED IN 13 Jul 2018: Add dictionary
 def isInDict(word):
+    # A singleton is used
+    dict = Dictionary.Instance()
+    # xxx = dict.lookup(word)
+    return dict.lookup(word)
 
-    raise NotImplementedError
+    # raise NotImplementedError
+
+
+if __name__ == "__main__":
+    word = "Phan huy"
+    print(word.istitle())
+    print(isNp(word))

@@ -1,4 +1,4 @@
-from src.CONSTANT import WORD_BEGIN, WORD_INSIDE
+from CONSTANT import WORD_BEGIN, WORD_INSIDE
 
 B_W = WORD_BEGIN
 I_W = WORD_INSIDE
@@ -35,7 +35,7 @@ def getLabelList(sent):
 
 def whole_word_position(label_list):
     """
-    Example: A sentence which have been segmentated represented in list word-tag as below:
+    Example: A sentence which have been segmented represented in list word-tag as below:
         B_W, B_W, I_W, B_W, I_W, B_W, B_W
     The output will be a list of tuples, which represent word position range:
         [0-0, 1-2, 3-4, 5-5, 6-6]
@@ -49,12 +49,13 @@ def whole_word_position(label_list):
     while i < len(label_list) - 1:
         i += 1
         if label_list[i] == B_W or label_list[i] == "O":
-            next_BW_pos = 0
+            next_BW_pos = len(label_list)
 
             for j in range(i + 1, len(label_list)):
                 if label_list[j] == B_W or label_list[j] == "O":
                     next_BW_pos = j
                     break
+                # else:
 
             word_with_range.append(str(i) + "-" + str(next_BW_pos - 1))
 
@@ -63,7 +64,7 @@ def whole_word_position(label_list):
 
 def segmentatedWordMatch(label_list_pred, label_list_true):
     """
-    Return number of correct segmentated word
+    Return number of correct segmented word
     :param label_list_1: list with format [0-1, 1-2, 3-3, ...], each is position of a word (multi-syllables)
     :param label_list_2: list with format [0-1, 1-2, 3-3, ...], each is position of a word (multi-syllables)
     :return: number of elements appear in both 2 lists.

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 
 import os
 from CONSTANT import WORD_BEGIN, WORD_INSIDE
@@ -11,7 +12,8 @@ def checkModelFileExistAndCreateNewModelName(name):
     i = 0
     tmp = name
     while os.path.isfile(tmp):
-        tmp = name + "_" + str(i)
+        # tmp = name + "_" + str(i)
+        tmp = name.replace(".pkl", "_" + str(i) + ".pkl")
         i += 1
 
     if tmp != name:

@@ -10,8 +10,8 @@ dir = os.path.abspath(__file__).split("/")
 ROOT_DIR = "/".join(dir[0:len(dir)-2])
 # print(ROOT_DIR)
 
-WORD_BEGIN = "B-W"
-WORD_INSIDE = "I-W"
+WORD_BEGIN = "B_W"
+WORD_INSIDE = "I_W"
 punctuations_and_symbols = ['.', ',', '…', ';', ':', '/', '"', '\'', '?', '>', '<', ']', '[', '(', ')', '*', '&',
                             '!', 'oOo', '”', '“', '-', '+', '=', '--------']
 
