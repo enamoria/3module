@@ -1,0 +1,18 @@
+=======================================
+Reading testing data ....
+Done!
+=======================================
+Load the model ...
+CRF(algorithm='lbfgs', all_possible_states=True,
+  all_possible_transitions=True, averaging=None, c=None, c1=0.1, c2=0.002,
+  calibration_candidates=None, calibration_eta=None,
+  calibration_max_trials=None, calibration_rate=None,
+  calibration_samples=None, delta=None, epsilon=None, error_sensitive=None,
+  gamma=None, keep_tempfiles=None, linesearch=None, max_iterations=3000,
+  max_linesearch=None, min_freq=None, model_filename=None,
+  num_memories=None, pa_type=None, period=30, trainer_cls=None,
+  variance=None, verbose=True)
+Done loading ws_july.pkl
+=======================================
+Testing ...
+Avg accuracy: 0.961224543362 over 7807 sentences (total of 199318 words)
