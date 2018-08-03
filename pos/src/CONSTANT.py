@@ -13,7 +13,7 @@ ROOT_DIR = "/".join(dir[0:len(dir)-2])
 WORD_BEGIN = "B_W"
 WORD_INSIDE = "I_W"
 punctuations_and_symbols = ['.', ',', '…', ';', ':', '/', '"', '\'', '?', '>', '<', ']', '[', '(', ')', '*', '&',
-                            '!', 'oOo', '”', '“', '-', '+', '=', '--------']
+                            '!', 'oOo', '”', '“', '-', '+', '=', '--------', '’', ]
 
 
 # DATASET_SUPPORT = {'vi': self.reader_tieng_viet, 'en': reader_tieng_anh}

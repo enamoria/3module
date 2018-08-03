@@ -5,12 +5,10 @@ from __future__ import print_function
 
 import sys
 import os
-import time
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from vidic.vidic import Dictionary
-from CONSTANT import punctuations_and_symbols
+from src.CONSTANT import punctuations_and_symbols
 
 
 def isNumber(s):
@@ -41,13 +39,14 @@ def isNp(s):
 
 
 # ADDED IN 13 Jul 2018: Add dictionary
-def isInDict(word):
-    # A singleton is used
-    dict = Dictionary.Instance()
-    # xxx = dict.lookup(word)
-    return dict.lookup(word)
-
-    # raise NotImplementedError
+# This dict is necessary for ws only
+# def isInDict(word):
+#     # A singleton is used
+#     dict = Dictionary.Instance()
+#     # xxx = dict.lookup(word)
+#     return dict.lookup(word)
+#
+#     # raise NotImplementedError
 
 
 if __name__ == "__main__":
